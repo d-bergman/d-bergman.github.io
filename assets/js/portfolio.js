@@ -3,6 +3,20 @@ const navigation = document.querySelector(".site-nav");
 const themeButton = document.querySelector(".theme-toggle");
 const backToTopButton = document.querySelector(".back-to-top");
 
+document.querySelectorAll("img").forEach((image) => {
+  image.draggable = false;
+});
+
+document.addEventListener("contextmenu", (event) => {
+  if (event.target.closest("img, picture, .portrait-frame, .project-image, .personal-image, .image-preview-stage, .contact-section")) {
+    event.preventDefault();
+  }
+});
+
+document.addEventListener("dragstart", (event) => {
+  if (event.target.closest("img, picture")) event.preventDefault();
+});
+
 function applyTheme(theme) {
   const useLightTheme = theme === "light";
   document.body.classList.toggle("light-theme", useLightTheme);

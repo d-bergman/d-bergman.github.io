@@ -3,6 +3,18 @@ const caseBackToTop = document.querySelector(".case-back-to-top");
 const caseThemeButton = document.querySelector(".case-theme-toggle");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+document.querySelectorAll("img").forEach((image) => {
+  image.draggable = false;
+});
+
+document.addEventListener("contextmenu", (event) => {
+  if (event.target.closest("img, picture, .hero-image, .artifact")) event.preventDefault();
+});
+
+document.addEventListener("dragstart", (event) => {
+  if (event.target.closest("img, picture")) event.preventDefault();
+});
+
 function applyCaseTheme(theme) {
   const useLightTheme = theme === "light";
   document.body.classList.toggle("light-theme", useLightTheme);

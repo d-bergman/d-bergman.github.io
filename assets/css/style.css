@@ -40,7 +40,13 @@ body {
 }
 body.menu-open { overflow: hidden; }
 body.dialog-open { overflow: hidden; }
-img { display: block; max-width: 100%; }
+img {
+  display: block;
+  max-width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { font: inherit; }

@@ -22,7 +22,13 @@ body.light-theme {
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--text); background: var(--ink); font-family: "DM Sans", sans-serif; line-height: 1.72; }
-img { display: block; max-width: 100%; }
+img {
+  display: block;
+  max-width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
 a { color: inherit; }
 :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
 .case-nav { position: sticky; z-index: 20; top: 0; background: rgba(7,17,31,.9); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
