@@ -10,8 +10,7 @@ function applyTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("portfolio-theme");
-const preferredTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-applyTheme(savedTheme || preferredTheme);
+applyTheme(savedTheme || "dark");
 
 themeButton?.addEventListener("click", () => {
   const nextTheme = document.body.classList.contains("light-theme") ? "dark" : "light";
