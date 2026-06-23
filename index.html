@@ -1,421 +1,291 @@
-<!DOCTYPE html>
-<html>
-
-
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Cabin|Noto+Sans+KR|IM+Fell+Double+Pica|Playball|Titan+One"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Darren Bergman's portfolio of practical web tools, operations dashboards, and accessible workflow solutions.">
+  <meta name="theme-color" content="#07111f">
+  <title>Darren Bergman | Web Tools & Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/portfolio.js" defer></script>
 </head>
-
 <body>
-    <div id="header">
-        <div class="dropdown" id="navbar1">
-            <picture>
-                <source srcset="assets/icons/menu-button-s.png" media="(max-width: 479px)">
-                <source srcset="assets/icons/menu-button.png">
-                <img src="assets/icons/menu-button.png" onclick="myButtonFunction()" class="dropbtn"
-                    style="background-color:#44B3BC" style="width:auto;">
-            </picture>
-            <div class="dropdown-content" id="drop">
-                <a onclick="to_home()" style="cursor:pointer">HOME</a>
-                <a onclick="to_about()" style="cursor:pointer">ABOUT ME</a>
-                <a onclick="to_skills() " style="cursor:pointer">SKILLS</a>
-                <a onclick="to_career()" style="cursor:pointer">CAREER</a>
-                <a onclick="to_projects()" style="cursor:pointer">PROJECTS</a>
-                <a onclick="to_contact()" style="cursor:pointer">CONTACT</a>
-                <a onclick="to_resume()" style="cursor:pointer">RESUME</a>
-            </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-        <h1 style="font-size:400%;" class="w3-container bounceIn" id="name" data-aos="fade-right"
-            data-aos-duration="1500">DARREN BERGMAN, N.C.</h1>
+  <header class="site-header" id="home">
+    <div class="nav-shell">
+      <a class="brand" href="#home">
+        <span class="brand-mark" aria-hidden="true">DB</span>
+        <span class="brand-copy">
+          <strong>Darren Bergman</strong>
+          <small>Web tools & operations</small>
+        </span>
+      </a>
 
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span><span></span>
+      </button>
 
-        <h3 style="color:white" class="w3-container" id="motto" data-aos="fade-left" data-aos-duration="1500">
-            CREATIVE•OUTGOING•PROFESSIONAL</h3>
-        <div id="social">
-            <a href="https://www.facebook.com/Darren.Bergman93"><img class="logos" src="assets/icons/Fb2.png"
-                    height="50" width="50"></a>
-            <a href="https://www.linkedin.com/in/d-bergman/"><img class="logos" src="assets/icons/Link2.png"
-                    height="50" width="50"></a>
-            <a href=""><img src="assets/icons/Sky2.png" class="logos" height="50" width="50"></a>
-            <a href="https://github.com/d-bergman"><img src="assets/icons/Git2.png" class="logos" height="50"
-                    width="50"></a>
-        </div>
-        <div id="resumediv">
-        <a id="resume" href="assets/doc/Darren-ResumeU2020.pdf">DOWNLOAD MY RESUME</a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#workflow">AI workflow</a>
+        <a href="#experience">Experience</a>
+        <button class="theme-toggle" type="button" aria-label="Switch to light theme" title="Switch color theme">
+          <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 10a6 6 0 1 1 0-12 6 6 0 0 1 0 12ZM11 1h2v3h-2V1Zm0 19h2v3h-2v-3ZM1 11h3v2H1v-2Zm19 0h3v2h-3v-2ZM4.22 2.81l2.12 2.12-1.41 1.41-2.12-2.12 1.41-1.41Zm13.44 14.85 2.12 2.12-1.41 1.41-2.12-2.12 1.41-1.41ZM2.81 19.78l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41ZM17.66 4.93l2.12-2.12 1.41 1.41-2.12 2.12-1.41-1.41Z"/></svg>
+          <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.6 15.2A8.5 8.5 0 0 1 8.8 3.4 9 9 0 1 0 20.6 15.2ZM12 21a7 7 0 0 1-5.5-11.33A10.5 10.5 0 0 0 17.33 18.5 6.96 6.96 0 0 1 12 21Z"/></svg>
+          <span class="sr-only">Toggle color theme</span>
+        </button>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Hi, I'm</p>
+          <h1>Darren <span>Bergman</span></h1>
+          <p class="hero-role">Testing Center Professional <span>•</span> Web Tools Builder <span>•</span> Operations & Student Support</p>
+          <p class="hero-intro">I build practical tools and workflows that simplify operations, support students, and solve real-world problems.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#projects">View projects <span aria-hidden="true">↘</span></a>
+            <a class="button button-secondary" href="assets/doc/Darren-Bergman-Resume2026-Public.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="social-links" role="group" aria-label="Professional links">
+            <a href="https://github.com/d-bergman" target="_blank" rel="noreferrer" aria-label="GitHub profile">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2.23c-3.22.7-3.9-1.37-3.9-1.37-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.57-.29-5.27-1.28-5.27-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.16 1.18a10.95 10.95 0 0 1 5.75 0c2.19-1.49 3.15-1.18 3.15-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.71 5.39-5.29 5.68.42.36.79 1.06.79 2.14v3.18c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/d-bergman/" target="_blank" rel="noreferrer" aria-label="LinkedIn profile">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5.35 7.85H1.74V22h3.61V7.85ZM3.55 2A2.1 2.1 0 1 0 3.55 6.2 2.1 2.1 0 0 0 3.55 2ZM22.26 13.88c0-4.25-2.27-6.23-5.3-6.23a4.57 4.57 0 0 0-4.13 2.27h-.05V7.85H9.32V22h3.61v-7c0-1.85.35-3.64 2.64-3.64 2.26 0 2.29 2.11 2.29 3.76V22h3.61l.79-8.12Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:djb.mailbox93@gmail.com" aria-label="Email Darren Bergman">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 4h-17A2.5 2.5 0 0 0 1 6.5v11A2.5 2.5 0 0 0 3.5 20h17a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 20.5 4Zm-.38 2L12 12.04 3.88 6h16.24ZM3 17.5V7.47l8.4 6.25a1 1 0 0 0 1.2 0L21 7.47V17.5a.5.5 0 0 1-.5.5h-17a.5.5 0 0 1-.5-.5Z"/></svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="portrait-wrap reveal">
+          <div class="portrait-frame">
+            <img src="assets/images/Me.png" alt="Professional headshot of Darren Bergman" width="711" height="568">
+          </div>
+          <div class="portrait-note">
+            <span class="status-dot" aria-hidden="true"></span>
+            <div><strong>Building useful things</strong><small>Operations · UX · Automation</small></div>
+          </div>
+          <div class="dot-grid" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="scroll-note" aria-hidden="true"><span></span>Explore my work</div>
+    </section>
+
+    <section class="section approach-section" aria-labelledby="approach-title">
+      <div class="shell approach-grid">
+        <div class="approach-intro reveal">
+          <p class="eyebrow">How I work</p>
+          <h2 id="approach-title">Built for the people <span>using it.</span></h2>
+          <p>I combine firsthand operations experience with practical web development. That means understanding the workflow first, then building the simplest useful solution around it.</p>
+        </div>
+        <article class="approach-card reveal">
+          <p class="approach-label">What I’m about</p>
+          <ul>
+            <li><span aria-hidden="true">01</span>Clearer operational workflows</li>
+            <li><span aria-hidden="true">02</span>Student-focused support</li>
+            <li><span aria-hidden="true">03</span>Accessible, understandable interfaces</li>
+            <li><span aria-hidden="true">04</span>Tools that are maintainable after launch</li>
+          </ul>
+        </article>
+        <article class="approach-card approach-card-current reveal">
+          <p class="approach-label">Currently</p>
+          <ul>
+            <li><span aria-hidden="true">↗</span>Improving testing-center workflows</li>
+            <li><span aria-hidden="true">↗</span>Developing administrative dashboards</li>
+            <li><span aria-hidden="true">↗</span>Refining UI and accessibility patterns</li>
+            <li><span aria-hidden="true">↗</span>Exploring responsible AI-assisted development</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-contrast" id="projects">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2>Tools built around <span>real needs.</span></h2>
+          <p>Operational software should reduce friction, make information clearer, and help people do their work with confidence.</p>
+        </div>
+
+        <div class="project-grid project-grid-primary">
+          <article class="project-card reveal">
+            <button class="project-image project-open" type="button" data-dialog="testing-center-dialog" aria-label="Read about the Testing Center Dashboard">
+              <img src="assets/images/HCTestingCenterDashboard.png" alt="Testing Center Dashboard showing live timers and a visual lab seat map" width="1910" height="908" loading="lazy">
+              <span class="image-action">View project →</span>
+            </button>
+            <div class="project-body"><div class="project-number">01</div><p class="project-type">Live operations dashboard</p><h3>Testing Center Dashboard</h3><p>A custom web application developed to streamline daily operations within a college testing center.</p><ul class="tag-list"><li>Firebase</li><li>JavaScript</li><li>Bootstrap</li></ul><button class="text-link project-open" type="button" data-dialog="testing-center-dialog">View project <span aria-hidden="true">→</span></button></div>
+          </article>
+          <article class="project-card reveal">
+            <button class="project-image project-open" type="button" data-dialog="new-eden-dialog" aria-label="Read about the New Eden Operations Dashboard">
+              <img src="assets/images/NewEdenDashboardHomePage.png" alt="New Eden operations dashboard with courses, tasks, staff status, and activity logs" width="1910" height="905" loading="lazy">
+              <span class="image-action">View project →</span>
+            </button>
+            <div class="project-body"><div class="project-number">02</div><p class="project-type">Administration platform</p><h3>New Eden Operations Dashboard</h3><p>A comprehensive platform for curriculum, records, files, tasks, notices, and reporting.</p><ul class="tag-list"><li>Firebase Auth</li><li>Storage</li><li>Realtime DB</li></ul><button class="text-link project-open" type="button" data-dialog="new-eden-dialog">View project <span aria-hidden="true">→</span></button></div>
+          </article>
+          <article class="project-card reveal">
+            <button class="project-image project-open" type="button" data-dialog="casino-dialog" aria-label="Read about the Virtual Casino project">
+              <img src="assets/images/VirtualCasinoDashboard.png" alt="Virtual Casino dashboard with player progression, games, achievements, and statistics" width="1909" height="913" loading="lazy">
+              <span class="image-action">View project →</span>
+            </button>
+            <div class="project-body"><div class="project-number">03</div><p class="project-type">Game systems & frontend</p><h3>Virtual Casino</h3><p>A browser-based gaming platform exploring progression systems, engagement, and persistent data.</p><ul class="tag-list"><li>JavaScript</li><li>Local Storage</li><li>Responsive UI</li></ul><button class="text-link project-open" type="button" data-dialog="casino-dialog">View project <span aria-hidden="true">→</span></button></div>
+          </article>
+        </div>
+
+        <div class="project-subheading reveal">
+          <div><p class="eyebrow">Long-running personal work</p><h3>Creative projects that matter to me.</h3></div>
+          <p>Years of writing, community building, worldbuilding, technical learning, and creative persistence.</p>
+        </div>
+        <div class="project-grid project-grid-personal">
+          <article class="project-card personal-project reveal"><button class="personal-visual personal-image project-open" type="button" data-dialog="gemini-dialog" aria-label="Read about Gemini Station"><img src="assets/images/GeminiStationWiki.png" alt="Gemini Station community wiki homepage" width="1909" height="906" loading="lazy"><span class="personal-image-label">Wiki · Community · Space RPG</span></button><div class="project-body"><p class="project-type">September 2019 — Present</p><h3>Gemini Station</h3><p>MediaWiki development, community administration, documentation, templates, and support for a browser-based space RPG.</p><ul class="tag-list"><li>MediaWiki</li><li>Wikicode</li><li>CSS</li><li>Regex</li></ul><button class="text-link project-open" type="button" data-dialog="gemini-dialog">Read the story <span aria-hidden="true">→</span></button></div></article>
+          <article class="project-card personal-project reveal"><button class="personal-visual personal-image project-open" type="button" data-dialog="apocrypha-dialog" aria-label="Read about The Apocrypha"><img src="assets/images/ApocryphaWritingDesk.png" alt="A professional writing desk with an open manuscript, fountain pen, notebook, and laptop" width="1821" height="864" loading="lazy"><span class="personal-image-label">Writing · Story development · Worldbuilding</span></button><div class="project-body"><p class="project-type">April 2011 — Present</p><h3>The Apocrypha</h3><p>An original five-book science-fiction and fantasy novel series built from a story and world I have developed since childhood.</p><ul class="tag-list"><li>Writing</li><li>Worldbuilding</li><li>Story planning</li></ul><button class="text-link project-open" type="button" data-dialog="apocrypha-dialog">Read the story <span aria-hidden="true">→</span></button></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="shell">
+        <div class="section-heading split-heading reveal">
+          <div><p class="eyebrow">What I bring</p><h2>Practical expertise, <span>connected.</span></h2></div>
+          <p>I work at the intersection of people, process, and technology—where a good interface can make a difficult day noticeably easier.</p>
+        </div>
+        <div class="skill-dashboard reveal">
+          <div class="skill-meters">
+            <div class="skill-meter"><div><strong>Testing Operations</strong><span>Advanced</span></div><div class="meter-track"><span style="--level:94%"></span></div></div>
+            <div class="skill-meter"><div><strong>Student Records & Documentation</strong><span>Advanced</span></div><div class="meter-track"><span style="--level:92%"></span></div></div>
+            <div class="skill-meter"><div><strong>Administrative Systems</strong><span>Advanced</span></div><div class="meter-track"><span style="--level:88%"></span></div></div>
+            <div class="skill-meter"><div><strong>HTML, CSS & JavaScript</strong><span>Applied</span></div><div class="meter-track"><span style="--level:78%"></span></div></div>
+            <div class="skill-meter"><div><strong>Firebase & Web Applications</strong><span>Applied</span></div><div class="meter-track"><span style="--level:76%"></span></div></div>
+            <div class="skill-meter"><div><strong>Process & Workflow Improvement</strong><span>Advanced</span></div><div class="meter-track"><span style="--level:90%"></span></div></div>
+          </div>
+          <div class="skill-inventory">
+            <article><h3>Testing & Security</h3><p>Exam administration, proctoring, academic integrity, ID verification, LanSchool, CompleteView, and secure materials handling.</p></article>
+            <article><h3>Systems & Records</h3><p>Banner, Salesforce, AIM, Formstack, NATCEP, Student Composite Lookup, transcript processing, and confidential records.</p></article>
+            <article><h3>Development</h3><p>HTML, CSS, JavaScript, Firebase, Bootstrap, GitHub, responsive UI, dashboards, and workflow automation.</p></article>
+            <article><h3>Productivity & Content</h3><p>Excel, Word, Outlook, PowerPoint, Google Workspace, MediaWiki, documentation, editing, and reporting.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section workflow-section" id="workflow">
+      <div class="shell workflow-grid">
+        <div class="workflow-copy reveal">
+          <p class="eyebrow">Human + AI workflow</p>
+          <h2>Faster exploration. <span>Human ownership.</span></h2>
+          <p>I use AI-assisted development tools as accelerators for prototyping, troubleshooting, documentation, UI planning, and workflow design while retaining ownership of requirements, architecture, testing, accessibility, deployment, and quality assurance.</p>
+          <ul class="tool-list" aria-label="Tools"><li>ChatGPT</li><li>Codex</li><li>GitHub Copilot</li><li>Firebase</li><li>GitHub</li></ul>
+        </div>
+        <div class="workflow-steps">
+          <article class="workflow-step reveal"><span>01</span><div><h3>Requirements & Planning</h3><p>Turning real workplace needs into clear features and workflows.</p></div></article>
+          <article class="workflow-step reveal"><span>02</span><div><h3>Rapid Prototyping</h3><p>Exploring layouts, code patterns, and interface ideas faster.</p></div></article>
+          <article class="workflow-step reveal"><span>03</span><div><h3>Testing & Ownership</h3><p>Reviewing, testing, refining, and validating final functionality.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-contrast" id="experience">
+      <div class="shell">
+        <div class="experience-heading reveal">
+          <p class="eyebrow">Experience</p>
+          <h2>Career <span>Timeline</span></h2>
+          <p>Operations, student services, systems administration, and practical problem solving.</p>
+        </div>
+        <div class="career-carousel reveal">
+          <div class="career-controls">
+            <p>Drag or use the arrows to explore earlier roles.</p>
+            <div><button class="career-nav career-prev" type="button" aria-label="Show newer experience">←</button><button class="career-nav career-next" type="button" aria-label="Show earlier experience">→</button></div>
+          </div>
+          <div class="career-track" tabindex="0" aria-label="Scrollable career history">
+            <article class="career-slide"><span class="career-dot" aria-hidden="true"></span><p class="timeline-label">November 2025 — Present</p><h3>Testing Center Coordinator</h3><p class="timeline-company">Harper College</p><p>Manage secure, high-volume testing operations while supporting students, faculty, and staff.</p><button class="career-open" type="button" data-dialog="harper-role-dialog">View experience <span>↗</span></button></article>
+            <article class="career-slide"><span class="career-dot" aria-hidden="true"></span><p class="timeline-label">January 2018 — Current</p><h3>Systems Administrator</h3><p class="timeline-company">New Eden School</p><p>Manage academic records, transcripts, course data, documentation, and administrative systems.</p><button class="career-open" type="button" data-dialog="new-eden-role-dialog">View experience <span>↗</span></button></article>
+            <article class="career-slide"><span class="career-dot" aria-hidden="true"></span><p class="timeline-label">August 2014 — May 2017</p><h3>Portal Administration / Project Manager</h3><p class="timeline-company">New Eden School</p><p>Coordinated development, testing, records, and support for a WordPress student portal.</p><button class="career-open" type="button" data-dialog="portal-role-dialog">View experience <span>↗</span></button></article>
+            <article class="career-slide"><span class="career-dot" aria-hidden="true"></span><p class="timeline-label">August 2012 — June 2014</p><h3>Sales Associate</h3><p class="timeline-company">Toys “R” Us</p><p>Built a foundation in customer service, retail operations, accuracy, and high-volume teamwork.</p><button class="career-open" type="button" data-dialog="toys-role-dialog">View experience <span>↗</span></button></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="shell contact-inner reveal">
+        <p class="eyebrow">Start a conversation</p>
+        <h2>Let’s <span>Connect.</span></h2>
+        <p>Interested in practical tools, workflow improvements, educational operations, or web projects? I’d be glad to hear from you.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="mailto:djb.mailbox93@gmail.com">Email me <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="https://github.com/d-bergman" target="_blank" rel="noreferrer">View GitHub</a>
+          <a class="button button-secondary" href="https://www.linkedin.com/in/d-bergman/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="project-dialog" id="testing-center-dialog">
+      <div class="dialog-layout">
+        <img src="assets/images/HCTestingCenterDashboard.png" alt="Testing Center Dashboard interface">
+        <div class="dialog-content"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="eyebrow">Professional project</p><h2>Testing Center Dashboard</h2><p>A custom web application developed to streamline daily operations within a college testing center. The dashboard provides real-time seat management, student timer tracking, testing history logs, and operational visibility across multiple testing labs.</p><p><strong>Key Technologies:</strong> Firebase Realtime Database, JavaScript, Bootstrap, HTML/CSS</p><h3>Highlights</h3><ul><li>Real-time timer and seat management</li><li>Interactive testing lab maps</li><li>Historical testing records and reporting</li><li>Multi-user synchronization across workstations</li><li>Designed and refined through direct staff feedback</li></ul><div class="dialog-actions"><a class="button button-primary" href="testing-center.html">Read full case study <span>→</span></a><button class="dialog-image-link image-preview-open" type="button" data-image="assets/images/HCTestingCenterDashboard.png" data-image-alt="Full Testing Center Dashboard screenshot">Preview screenshot ↗</button></div></div>
+      </div>
+    </dialog>
+    <dialog class="project-dialog" id="new-eden-dialog">
+      <div class="dialog-layout">
+        <img src="assets/images/NewEdenDashboardHomePage.png" alt="New Eden Operations Dashboard interface">
+        <div class="dialog-content"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="eyebrow">Professional project</p><h2>New Eden Operations Dashboard</h2><p>An in-development educational operations platform centralizing curriculum, records, transcripts, files, tasks, notices, staff activity, system health, and administration.</p><p><strong>Key Technologies:</strong> Firebase Authentication, Firebase Storage, Realtime Database, JavaScript, Bootstrap</p><h3>Highlights</h3><ul><li>Course, curriculum, and program management</li><li>Transcript generation and centralized file repository</li><li>Administrative notices, tasks, and activity logging</li><li>Role-based access controls and live staff presence</li><li>Maintenance, health, backup, and contribution systems</li></ul><div class="dialog-actions"><a class="button button-primary" href="new-eden.html">Read full case study <span>→</span></a><button class="dialog-image-link image-preview-open" type="button" data-image="assets/images/NewEdenDashboardHomePage.png" data-image-alt="Full New Eden Operations Dashboard screenshot">Preview screenshot ↗</button></div></div>
+      </div>
+    </dialog>
+    <dialog class="project-dialog" id="casino-dialog">
+      <div class="dialog-layout">
+        <img src="assets/images/VirtualCasinoDashboard.png" alt="Virtual Casino and Achievement System interface">
+        <div class="dialog-content"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="eyebrow">Personal application</p><h2>Virtual Casino & Achievement System</h2><p>A browser-based gaming platform created as a personal project to explore game design, progression systems, and user engagement mechanics. The application includes Poker, Blackjack, UNO, slot machines, achievements, player statistics, experience points, daily challenges, and long-term progression tracking. The project focuses heavily on balancing gameplay systems, user experience, and data persistence while creating an engaging interactive experience.</p><p><strong>Key Technologies:</strong> JavaScript, HTML/CSS, Local Storage, Responsive UI Design</p><h3>Highlights</h3><ul><li>Multi-game casino experience</li><li>Player progression and leveling systems</li><li>Achievement and reward framework</li><li>Daily challenges and engagement mechanics</li><li>Persistent player statistics and history tracking</li></ul><button class="dialog-image-link image-preview-open" type="button" data-image="assets/images/VirtualCasinoDashboard.png" data-image-alt="Full Virtual Casino dashboard screenshot">Preview screenshot ↗</button></div>
+      </div>
+    </dialog>
+    <dialog class="project-dialog" id="gemini-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="eyebrow">September 2019 — Present</p><h2>Gemini Station</h2><p>I contributed to Gemini Station, a browser-based space RPG, through MediaWiki administration, community support, and forum and Discord administration.</p><h3>Wiki development</h3><p>I built and organized much of the game’s wiki from the ground up, created advanced Wikicode templates, handled CSS styling, maintained content as other contributors joined, and helped new editors understand the platform. The work also introduced me to PHP-related extension setup and deeper MediaWiki administration.</p><h3>Community administration</h3><p>Maintaining the community Discord taught me how to manage a large group professionally, moderate conflicts, support users, and coordinate with the developer and other staff members.</p><p><strong>Applied skills:</strong> HTML, CSS, Wikicode, Regex, MediaWiki administration, documentation, moderation, and community support.</p></div>
+    </dialog>
+    <dialog class="project-dialog" id="apocrypha-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close project details">×</button><p class="eyebrow">April 2011 — Present</p><h2>The Apocrypha</h2><p>The Apocrypha is an original novel series I have been developing since 2011, with plans for a five-book science-fiction and fantasy story. I use story-planning tools to organize ideas, outlines, chapters, character profiles, and the larger fictional world.</p><p>The story grew from an idea I carried since childhood. It follows a survivor of an ancient, technologically advanced elemental culture who wakes after a slumber lasting hundreds of thousands of years.</p><p>This long-running project represents creativity, imagination, persistence, writing, organization, worldbuilding, and the willingness to keep developing a difficult idea over time.</p></div>
+    </dialog>
+    <dialog class="project-dialog role-dialog" id="harper-role-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close experience details">×</button><p class="eyebrow">November 2025 — Present</p><h2>Testing Center Coordinator</h2><p class="dialog-role-company">Harper College</p><p>I coordinate high-volume testing operations while serving as a front-desk contact for students, faculty, staff, and visitors in a fast-paced testing environment.</p><h3>Responsibilities & impact</h3><ul><li>Support CNA, accommodations, make-up, placement, CLEP, College Board, and Pearson GED exams.</li><li>Verify identification, schedule appointments, check students in and out, and maintain secure exam handling procedures.</li><li>Use Banner, Salesforce, AIM, Formstack, NATCEP, Student Composite Lookup, and Outlook.</li><li>Proctor paper-based and computer-based exams while protecting academic integrity and confidentiality.</li><li>Use LanSchool and CompleteView to monitor secure testing environments.</li><li>Designed an internal operations dashboard for seat management, live timers, and proctor workflows.</li></ul><div class="role-skill-list"><span>Testing administration</span><span>Student support</span><span>Test security</span><span>Process improvement</span><span>Administrative systems</span></div></div>
+    </dialog>
+    <dialog class="project-dialog role-dialog" id="new-eden-role-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close experience details">×</button><p class="eyebrow">January 2018 — Current</p><h2>Systems Administrator</h2><p class="dialog-role-company">New Eden School</p><p>I manage academic records, transcripts, course data, documentation, and the systems supporting educational administration.</p><h3>Responsibilities & impact</h3><ul><li>Maintain confidential exams, grades, transcripts, and course documentation.</li><li>Generate and verify official transcripts using multiple academic record sources.</li><li>Maintain Excel databases for courses, curriculum listings, credit hours, and records.</li><li>Develop and maintain a Firebase-based administration platform for records and reporting workflows.</li><li>Reformatted and standardized more than 160 course instruction documents.</li><li>Audit records, resolve discrepancies, and maintain consistency across systems.</li></ul><div class="role-skill-list"><span>Academic records</span><span>Transcript processing</span><span>Firebase</span><span>Excel</span><span>Documentation</span></div></div>
+    </dialog>
+    <dialog class="project-dialog role-dialog" id="portal-role-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close experience details">×</button><p class="eyebrow">August 2014 — May 2017</p><h2>Portal Administration / Project Manager</h2><p class="dialog-role-company">New Eden School</p><p>I helped guide the development and administration of a WordPress-based student portal for online exams, videos, records, and student services.</p><h3>Responsibilities & impact</h3><ul><li>Served as liaison between school administration and developers.</li><li>Gathered requirements, tested features, logged bugs, and supplied technical feedback.</li><li>Entered and maintained online exams, grades, student profiles, and academic records.</li><li>Monitored data accuracy and helped resolve duplicate or inconsistent entries.</li><li>Supported faculty and students while ensuring records remained accessible and current.</li></ul><div class="role-skill-list"><span>Project coordination</span><span>Requirements</span><span>Quality assurance</span><span>WordPress</span><span>Technical support</span></div></div>
+    </dialog>
+    <dialog class="project-dialog role-dialog" id="toys-role-dialog">
+      <div class="dialog-content dialog-content-text"><button class="dialog-close" type="button" aria-label="Close experience details">×</button><p class="eyebrow">August 2012 — June 2014</p><h2>Sales Associate</h2><p class="dialog-role-company">Toys “R” Us</p><p>This role built my early foundation in customer service, retail operations, accuracy, patience, and teamwork in a high-volume environment.</p><h3>Responsibilities & impact</h3><ul><li>Helped customers with product selection, questions, and account-related concerns.</li><li>Operated registers, processed payments, and maintained transaction accuracy.</li><li>Handled merchandise, stocking, pricing, and store organization.</li><li>Worked efficiently during busy periods while maintaining professional service.</li><li>Helped set up a store location in Spring Hill Mall.</li></ul><div class="role-skill-list"><span>Customer service</span><span>Retail operations</span><span>Cash handling</span><span>Merchandising</span><span>Teamwork</span></div></div>
+    </dialog>
+    <dialog class="image-preview-dialog" id="image-preview-dialog">
+      <button class="image-preview-close" type="button" aria-label="Close full screenshot preview">×</button>
+      <div class="image-preview-stage"><img src="" alt=""></div>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">DB</span><span class="brand-copy"><strong>Darren Bergman</strong><small>Practical tools. Thoughtful workflows.</small></span></a>
+      <p>© <span id="year">2026</span> Darren Bergman. Built with care and curiosity.</p>
     </div>
-
-    <div id="content">
-
-        <div id="about" class="w3-rest" class="w3-row"><br>
-            <h2 id="h_about" data-aos="zoom-in" data-aos-duration="1500">ABOUT ME</h2>
-            <div class="w3-third  w3-cell" data-aos="flip-right" data-aos-duration="2000">
-
-                <picture id="pic">
-                    <source srcset="assets/images/darrenmobile.png" media="(max-width: 479px)">
-                    <source srcset="assets/images/darren.png" width="330" height="130">
-                    <img src="assets/images/darren.png" id="me">
-                </picture>
-            </div>
-
-            <div id="animation_about" class="w3-twothird w3-cell" data-aos="zoom-in-right" data-aos-duration="2000">
-                <p id="info">
-                    <p>
-                        <!--Introduction-->
-                        My name is Darren Bergman. I am currently enrolled with New Eden School of Natural Health for multiple different degrees and certifications.
-                        I am a certified Nutritional Counselor and working towards a Doctorate in Original Medicine. 
-                        This portfolio will give you insight into who I am, my career, personal projects, hobbies and contact information.
-                    </p>
-                    <p>
-                        <!--My Wife-->
-                        In February of 2019, I married my soulmate, Bhumika. My wife is from India, she is a Computer Engineer and a fantastic cook!
-                    </p>
-                    <br>
-                    <p>
-                        <!--Hobbies & Interesting-->
-                        Other than spending my time on more serious things, I enjoy my time with family and friends, such as; Bike rides, walks, working out, watching TV shows, and traveling.
-                        In the warmer weather I absolutely love to spar my friends with UltraSaber Lightsabers. 
-                        I am person who loves, lives and breathes computers and technology. 
-                        Whether it be; Wiki development/administration, website development, graphic designing, data management, or even some levels of coding, I love it all!
-                        My other hobbies are; Playing video games, beta-testing, moderating large discord communities, writing fictional stories, and writing music with an Innovation Launchpad.
-                        <br>
-                        I can be very organized with a clean workspace.
-                        I have been told that I have big potential because I am extremely creative and put a major amount of effort into whatever I am working on.
-                        But, one of my favorite mottoes is "There is always room for Improvement" in which; I thrive to apply it in my life.
-                    </p>
-                    <br>
-                    <p>
-                        <!--What i would like to become-->
-                        My dream that I endeavor to achieve is to become someone who is very educated in the natural health field
-                        and also in the ways of counseling and helping people with their problems but through holistic means.
-                        I have always had a big interest and desire to learn and expand my knowledge about health. Whenever I see someone who is sick
-                        or suffering, I feel a pull to try and rescue them by coaching them with ways to get better and improve themselves.
-                        I found that this was my main desire and passion for my life and I am taking every step I can to achieve this goal.
-                        Due to a lifetime of illness from birth, helping people with their health issues became a passion for me. 
-                        I am actively looking for opportunities to further my knowledge to achieve my dream.
-                    </p>
-
-                </p>
-            </div>
-        </div>
-
-
-
-        <div id="skills" class="w3-rest">
-            <h2 id="h_skills" data-aos="zoom-in" data-aos-duration="1500">MY SKILLS</h2>
-            <p id="pskills">
-                These are my current skill sets, and I am always looking for ways to further advanced my knowledge in these categories.
-            </p>
-            <ul class="skills-bar-container">
-                <div class="w3-half w3-container w3-left-align w3-margin-bottom">
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">HTML</h3>
-                            <span class="percent" id="html-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-html"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">Windows 10</h3>
-                            <span class="percent" id="win10-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-win10"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">iOS</h3>
-                            <span class="percent" id="ios-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-ios"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">MS Office</h3>
-                            <span class="percent" id="msoffice-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-msoffice"></span>
-                        </div>
-                    </li>
-                </div>
-
-
-                <div class="w3-half w3-container w3-left-align w3-margin-bottom">
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">CSS</h3>
-                            <span class="percent" id="css-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-css"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">Mac iOS</h3>
-                            <span class="percent" id="macios-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-macios"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">Android</h3>
-                            <span class="percent" id="android-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-android"></span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="progressbar-title">
-                            <h3 class="s_tital">Wiki Markup</h3>
-                            <span class="percent" id="wikian-pourcent"></span>
-                        </div>
-                        <div class="bar-container">
-                            <span class="progressbar progress_b" id="progress-wikian"></span>
-                        </div>
-                    </li>
-                </div>
-
-
-
-            </ul>
-        </div>
-
-        <div id="career" class="w3-rest"><br>
-            <h2 id="h_career" data-aos="zoom-in" data-aos-duration="1500">MY ENTIRE CAREER</h2>
-            <div class="w3-row-padding">
-                <h3 class="w3-content " style="text-shadow:1px 1px 0 #444">Education</h3>
-                <div class="w3-quarter w3-border-right tital" data-aos="zoom-in-left" data-aos-duration="1500">
-                    <h4>June 2016 - PRESENT</h4>
-                    <hr class="c_line">
-                    New Eden School
-                    <br>South Bend,Indiana,US
-
-                </div>
-                <div class="w3-threequarter w3-left-align rightside" data-aos="zoom-in-right" data-aos-duration="1500">
-                    <br>• Doctorate of Original Medicine 
-                    <br>• Degree in Aromatherpy
-                    <br>• Degree in Iridology
-                </div>
-            </div>
-            <br>
-            <div class="w3-row-padding">
-                <h3 class="w3-content" style="text-shadow:1px 1px 0 #444">Work Experience</h3>
-                <br>
-                <div class="w3-quarter w3-border-right tital" data-aos="zoom-in-left" data-aos-duration="1500">
-                    <h4>January 2018 - PRESENT</h4>
-                    <hr class="c_line">
-                    General Editor/Administration
-                    <br>New Eden School
-                </div>
-                <div class="w3-threequarter w3-left-align  rightside " data-aos="zoom-in-right"
-                    data-aos-duration="1500">
-                    <p>
-                        I was offered a position by the director of New Eden School to work as a writer and school administrator.
-                        This has given me an opportunity to further advance my writing skills in a more professional aspect. 
-                        Exams I finish have multiple different difficulties ranging from easy questions to very tricky questions,
-                        this gives the very nature of the exam of what the director of the school was looking for. 
-                        <a href="http://www.newedenschoolofnaturalhealth.org/"><u>Click here</u></a> to look at the school website.
-                    </p>
-                    <p>
-                        My responsibilities are to manage the website, answer technical inquiries of the students,
-                        professionally edit the textbooks, handle transcripts, and write the exams for each course provided by New Eden School.
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="w3-row-padding">
-                <br>
-                <div class="w3-quarter w3-border-right tital" data-aos="zoom-in-left" data-aos-duration="1500">
-                    <h4>August 2014 - May 2017</h4>
-                    <hr class="c_line">
-                    Portal Management Administration/Project Manager
-                    <br>New Eden School
-                </div>
-                <div class="w3-threequarter w3-left-align  rightside " data-aos="zoom-in-right"
-                    data-aos-duration="1500">
-                    <p>
-                        I had the opportunity to work with New Eden School as a Project Manager/Admin of a team for developing a WordPress based student portal for online exams, conference videos and a in-built forum.
-                        During this time I was responsible for communicating with two other colleagues that were part of the development process and worked with the director of the school
-                        to bring forth the portal that he envisioned. Over the course of several months of work, we were able to finish the portal and I remained on board as an 
-                        admininistrator. During the time as Administrator of the Student Portal, my responsibilities were to create student profiles and give them access to the exams I input into the 
-                        portal. Exams were given to me by the school director after he redesigned them from the original written exam to a more suitable exam for online use.
-                    </p>
-                </div>
-            </div>
-            <br>
-            <div class="w3-row-padding">
-                <div class="w3-quarter w3-border-right  tital" data-aos="zoom-in-left" data-aos-duration="1500">
-                    <h4>August 2012 - June 2014</h4>
-                    <hr class="c_line">
-                    Sales Associate
-                    <br>Toys R Us
-                </div>
-                <div class="w3-threequarter w3-left-align  rightside" data-aos="zoom-in-right" data-aos-duration="1500">
-                    <p>
-                        This was technically my first real job in Retail and I learned a lot about customer service, handling merchandise, stocking, 
-                        and how to be quick when figuring out where things were in the store. This was a great opportunity for me to learn what it was
-                        like to work a job. During this time, I and several other employees helped to setup a store front in Spring Hill Mall. 
-                        From this experience came most of my experience of what it took to setup a store and price merchandise.
-                    </p>
-                </div>
-            </div>
-            <br>
-        </div>
-
-        <div id="projects" class="w3-rest"><br>
-            <h2 id="h_projects" class="w3-content" data-aos="zoom-in" data-aos-duration="1000">PERSONAL PROJECTS</h2>
-            <div class="w3-row-padding">
-                <div class="w3-quarter" data-aos="fade-down" data-aos-duration="1000">
-                    <h4>September 2019 - PRESENT</h4>
-                    <hr>Gemini Station
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-row-padding w3-left-align rightside">
-                        Applied Technical Skills: HTML, CSS, Wikicode, Regex
-                        <p><br>
-                            I was offered a great opportunity to participate in the creation of content for Gemini
-                            Station, a browser based space rpg game, created by Jon Wenzel.
-                            The projects that I am currently working are; Administration of a MediaWiki Site, 
-                            Administration/Moderation of an unofficial fan-based discord server, and administration of the forum. 
-                        </p>
-                        <p>
-                            <u><b>Wiki</b></u>: My main contribution towards Gemini Station at this time is their Wiki. I have given 
-                            many hours of my time in the full creation of the wiki from the ground up. Once I had established the wiki
-                            and finished a good portion of its main contents, others started contributing and editing the wiki. 
-                            When new users join, I helped them better understand how to work the wiki when they asked to learn more. 
-                            Those that did not ask to learn and just began their contributions, I simply fixed their edits and continued to maintain the wiki.
-                            Other things I did on the wiki was create complex Templates using the more advanced wikicode and handled some of the CSS Styling. 
-                            I also had to learn abit about php when interacting with the game's developer, having to install MediaWiki Extensions to allow some of the major
-                            functionality to work properly. This wiki project has helped me learn quite alot more about the Wiki Markup Language.
-                        </p>
-                        <p>
-                            <u><b>Discord</b></u>: Another big contribution towards this project for Gemini Station is the maintaining and administrating of the discord server.
-                            I have run several discord servers before but never from a business perspective. Having the opportunity to perform as an admin for the game's discord server has taught me several things
-                            about how to conduct myself in a professional setting such as; Managing a large group of people and how to properly and professionally handle conflicts. Through trial and error,
-                            I was able to overcome great obstacles with help from the developer and other staff members in the community server.
-                        </p>
-                        <p>
-                            I am enjoying working on this project and expanding my knowledge in using Wiki Markup Language.
-                            It is also known as Wikicode or Wikitext.
-                        </p>
-                        <a href="http://wiki.geministation.com/"><u>Click Here</u></a> to view the wiki project.
-
-                    </div>
-                </div>
-                <div class="w3-quarter w3-animate-bottom " data-aos="fade-down-left" data-aos-duration="1000">
-                    <h4>April 2011 - PRESENT</h4>
-                    <hr>The Apocrypha
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-left-align rightside">
-                        Applied skills: Writing, Creativity, Imagination
-                        <p><br>
-                            The Apocrypha is a Novel Series that I am writing. I am currently still working on the first book, but have plans to continue on until I have a five book series.
-                            In this project I am utilizing an organizer called <a href="https://hiveword.com/"><u>Hiveword</u></a>. It has helped me big time when organizing my ideas, outlines, 
-                            chapters, character profiles, and other things. It is a huge challenge for me to undertake this project, which started back in 2011. Ever since I was little and would 
-                            play out in my backyard as a kid, I always had this one special story in my mind and decided to bring it into reality with a novel series. My wife and also a good friend have
-                            supported my project, helping me in areas in which I have struggled. They both have given me a lot of inspiration and ideas to further my novel project.
-                        </p>
-                        <p>
-                            My novel series is about a survivor of an old ancient race with advanced technology. An elemental-like culture. This particular survivor is the protagonist of the story 
-                            and begins by waking up from a slumber which lasted several hundred thousand years. The novel will be mixed genre; Fantasy and Science Fiction. 
-                        </p>
-
-
-                    </div>
-                </div>
-                <div class="w3-quarter w3-animate-bottom " data-aos="fade-down-left" data-aos-duration="1000">
-                    <h4>January 2020 - PRESENT</h4>
-                    <hr>Apocrypha Video Game
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-left-align rightside">
-                        Applied skills: Management, Teamwork, Creativity, Game Development
-                        <p><br>
-                            I just recently began the workings of figuring out how to develop a game based on my own novel's storyline. Working with Jon Wenzel with his game, Gemini Station,
-                            has given me an idea of what its like to develop a game. I got an inspiration to start my own video game when talking with friends of mine and decided to create a game
-                            that is based in 2.5D point of view. Quests, Open World, Adventure, Heavily story driven is what I want to include in this game. Currently we are in the process of talking
-                            about how to start and sorting out who does what. Trello has been decided for use to organize our ideas, bug tracking and its development.
-                        </p>
-                    </div>
-                </div>
-                <div class="w3-quarter" data-aos="fade-down" data-aos-duration="1000">
-                    <h4>Date</h4>
-                    <hr>Project
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-left-align rightside">
-                        Applied Skills:
-                        <p><br>
-                            Content
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="w3-row-padding">
-                <div class="w3-quarter" data-aos="fade-down" data-aos-duration="1000">
-                    <h4>Date</h4>
-                    <hr>Project
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-left-align rightside">
-                        Applied Skills:
-                        <p><br>
-                            Content
-                        </p>
-                    </div>
-                </div>
-                <div class="w3-quarter" data-aos="fade-down-right" data-aos-duration="1000">
-                    <h4>Date</h4>
-                    <hr>Project
-                    <br><button class="collapsible">Read more</button>
-                    <div class="content w3-left-align rightside">
-                        Applied Skills:
-                        <p><br>
-                            Content
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="contact" class="w3-rest w3-animate-bottom"><br>
-            <h2 id="h_contact" data-aos="zoom-in" data-aos-duration="1500">CONTACT</h2>
-
-            <p><img src="assets/icons/location.png" height="30" width="30"><br>2861 Waterfront Avenue
-                <br>Algonquin IL 60102 USA
-                <br><img id="phone" src="assets/icons/phone.png" height="30" width="30"><br>224-225-9198
-                <br><img id="mail" src="assets/icons/mail.png" height="30" width="30"><br><a
-                    onclick="sendmail()">djb.mailbox93@gmail.com</a>
-            </p>
-
-        </div>
-
-
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script>
-            AOS.init();
-        </script>
-        <script src="assets/js/portfolio.js"></script>
-
-
+  </footer>
+  <button class="back-to-top" type="button" aria-label="Back to top" title="Back to top">
+    <span aria-hidden="true">↑</span>
+  </button>
 </body>
-
 </html>
