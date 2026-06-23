@@ -28,7 +28,11 @@ a { color: inherit; }
 .case-nav { position: sticky; z-index: 20; top: 0; background: rgba(7,17,31,.9); border-bottom: 1px solid var(--line); backdrop-filter: blur(18px); }
 body.light-theme .case-nav { background: rgba(244,241,234,.92); }
 .case-nav-inner { width: var(--shell); min-height: 70px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-.case-brand { font-family: Manrope, sans-serif; font-weight: 800; text-decoration: none; letter-spacing: .06em; }
+.case-brand { display: inline-flex; gap: 13px; align-items: center; text-decoration: none; }
+.case-brand-mark { width: 47px; height: 47px; display: grid; place-items: center; flex: 0 0 auto; color: var(--gold); border: 1px solid var(--gold); border-radius: 11px; font-family: Manrope, sans-serif; font-size: 18px; font-weight: 800; letter-spacing: -2px; }
+.case-brand-copy { display: flex; flex-direction: column; line-height: 1.1; }
+.case-brand-copy strong { font-family: Manrope, sans-serif; font-size: 16px; letter-spacing: .08em; text-transform: uppercase; }
+.case-brand-copy small { margin-top: 6px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
 .back-link { color: var(--gold); font-size: 13px; font-weight: 800; text-decoration: none; }
 .case-nav-actions { display: flex; align-items: center; gap: 18px; }
 .case-theme-toggle { width: 40px; height: 40px; padding: 0; display: grid; place-items: center; color: var(--muted); background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 50%; cursor: pointer; transition: color .2s ease, border-color .2s ease, transform .2s ease; }
@@ -144,8 +148,9 @@ h1 { max-width: 900px; margin: 0 0 22px; font-size: clamp(3.2rem, 7vw, 6.7rem); 
   font-size: 1.08rem;
   opacity: 0;
   transform: translateX(-22px);
+  transition: transform .38s cubic-bezier(.2,.8,.2,1), box-shadow .38s ease, border-radius .38s ease, background .38s ease;
 }
-.case-section.visible .case-quote { animation: quoteArrival .7s cubic-bezier(.2,.8,.2,1) .2s forwards; }
+.case-quote.visible { opacity: 1; transform: none; animation: quoteArrival .75s cubic-bezier(.2,.8,.2,1) .1s backwards; }
 .case-quote::before {
   position: absolute;
   top: 0;
@@ -156,6 +161,7 @@ h1 { max-width: 900px; margin: 0 0 22px; font-size: clamp(3.2rem, 7vw, 6.7rem); 
   background: var(--gold);
   box-shadow: 0 0 18px rgba(240,184,63,.65);
   animation: quoteGlow 3.8s ease-in-out infinite;
+  transition: width .3s ease, box-shadow .3s ease;
 }
 .case-quote::after {
   position: absolute;
@@ -167,8 +173,17 @@ h1 { max-width: 900px; margin: 0 0 22px; font-size: clamp(3.2rem, 7vw, 6.7rem); 
   background: radial-gradient(circle, rgba(101,216,196,.14), transparent 68%);
   border-radius: 50%;
   animation: quoteOrbit 7s ease-in-out infinite alternate;
+  transition: transform .4s ease;
   pointer-events: none;
 }
+.case-quote.case-reveal.visible:hover, .case-quote.case-reveal.visible:focus-visible {
+  background: linear-gradient(135deg, rgba(240,184,63,.18), rgba(101,216,196,.12));
+  border-radius: 0 19px 19px 0;
+  box-shadow: 0 18px 48px rgba(0,0,0,.22), inset 0 0 0 1px rgba(101,216,196,.09);
+  transform: translateX(9px) translateY(-4px);
+}
+.case-quote.case-reveal.visible:hover::before, .case-quote.case-reveal.visible:focus-visible::before { width: 5px; box-shadow: 0 0 26px rgba(240,184,63,.9); }
+.case-quote.case-reveal.visible:hover::after, .case-quote.case-reveal.visible:focus-visible::after { transform: translate(-58px, 42px) scale(1.35); }
 @keyframes featureCardArrival { to { opacity: 1; transform: none; } }
 @keyframes quoteArrival { to { opacity: 1; transform: none; } }
 @keyframes quoteGlow { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
@@ -209,6 +224,9 @@ h1 { max-width: 900px; margin: 0 0 22px; font-size: clamp(3.2rem, 7vw, 6.7rem); 
   .case-back-to-top { right: 16px; bottom: 16px; width: 45px; height: 45px; }
   .case-nav-actions { gap: 9px; }
   .back-link { font-size: 11px; }
+  .case-brand-mark { width: 42px; height: 42px; }
+  .case-brand-copy strong { font-size: 13px; }
+  .case-brand-copy small { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
